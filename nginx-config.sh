@@ -36,13 +36,13 @@ server {
 
 
 server {
-    if ($host = www.$1) {
-        return 301 http://$host$request_uri;
+    if (\$host = www.$1) {
+        return 301 http://\$host\$request_uri;
     } # managed by Certbot
 
 
-    if ($host = $1) {
-        return 301 http://$host$request_uri;
+    if (\$host = $1) {
+        return 301 http://\$host\$request_uri;
     } # managed by Certbot
 
 
@@ -75,8 +75,8 @@ server {
 
 }
 server {
-    if ($host = admin.$1) {
-        return 301 http://$host$request_uri;
+    if (\$host = admin.$1) {
+        return 301 http://\$host\$request_uri;
     } # managed by Certbot
 
     listen       80;
@@ -107,8 +107,8 @@ server {
     }
 }
 server {
-    if ($host = api.$1) {
-        return 301 http://$host$request_uri;
+    if (\$host = api.$1) {
+        return 301 http://\$host\$request_uri;
     } # managed by Certbot
 
     listen       80;
