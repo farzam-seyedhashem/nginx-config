@@ -36,19 +36,9 @@ server {
 
 
 server {
-    if (\$host = www.$1) {
-        return 301 http://\$host\$request_uri;
-    } # managed by Certbot
-
-
-    if (\$host = $1) {
-        return 301 http://\$host\$request_uri;
-    } # managed by Certbot
-
-
+  
     listen       80;
     server_name  $1 www.$1;
-    return 404; # managed by Certbot
 }
 EOL
 echo "==================================================================="
@@ -75,13 +65,9 @@ server {
 
 }
 server {
-    if (\$host = admin.$1) {
-        return 301 http://\$host\$request_uri;
-    } # managed by Certbot
 
     listen       80;
     server_name  admin.$1;
-    return 404; # managed by Certbot
 }
 EOL
 echo "==================================================================="
@@ -107,13 +93,9 @@ server {
     }
 }
 server {
-    if (\$host = api.$1) {
-        return 301 http://\$host\$request_uri;
-    } # managed by Certbot
-
     listen       80;
     server_name  api.$1;
-    return 404; # managed by Certbot
+
 }
 EOL
 echo "==================================================================="
